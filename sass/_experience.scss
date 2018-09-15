@@ -1,0 +1,86 @@
+.experience{
+  padding: 4rem;
+  &__content{
+    width: 100%;
+    display: flex;
+    &__header{
+      height: 100vh;
+      border: 1px solid lightgray;
+      flex: 0 0 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10rem;
+
+      letter-spacing: .2rem;
+      line-height: 5rem;
+      & h1{
+        font-family: Arial;
+        font-size: 3rem;
+        font-weight: 400;
+      }
+    }
+    &__text{
+
+      height: 100vh;
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      background-color: #F8F9FB;
+
+      padding: 5rem  0;
+
+      transform: translate(-2rem,-2rem);
+
+      &-box{
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        width: 70%;
+        &-number{
+          & h1{
+            padding-top: .5rem;
+            color: red;
+            font-weight: 600;
+            font-size: 3rem;
+            padding-right: 5rem;
+          }
+
+        }
+        &-content{
+          display: flex;
+          flex-direction: column;
+          & h1{
+            font-size: 3rem;
+            font-family: "Open Sans";
+            font-weight: 400;
+            padding-bottom: 3rem;
+          }
+          & p{
+            font-size: 1.8rem;
+            color: #535353;
+          }
+        }
+      }
+    }
+  }
+  &__background{
+    margin: 8rem 0;
+    height: 600px;
+    background-image: url("../img/stairs_background.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    & h1 {
+      font-size: 4rem;
+      font-family: "Open Sans";
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+  }
+}

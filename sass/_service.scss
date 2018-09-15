@@ -1,0 +1,120 @@
+.service{
+  width: 100%;
+  padding: 3rem 5rem 0 5rem;
+  &-box{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8rem;
+  }
+  &__header{
+    flex: 0 0 50%;
+    padding-right: 1.5rem;
+    & h1 {
+      font-family: Arial;
+      font-weight: 500;
+      font-size: 4.5rem;
+      & span{
+        color: #FE3140;
+      }
+    }
+  }
+  &__text{
+    padding-left: 1.5rem;
+    & p{
+      font-size: 1.8rem;
+      padding-bottom: 2rem;
+      line-height: 3rem;
+      letter-spacing: .1rem;
+      color: #535353;
+    }
+  }
+  &__content{
+    &-boxes {
+      cursor: pointer;
+      padding: 2rem 1rem 0 1rem;
+      display: flex;
+      justify-content: center;
+      &>*{
+        border-top: 1px solid lightgray;
+      }
+      &>*:not(:last-child){
+        border-right: 1px solid lightgray;
+      }
+    }
+    &-box{
+      flex: 0 0 25%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+      &:hover >*{
+        color: #fff !important;
+      }
+      &>*{
+        padding-bottom: 3rem;
+      }
+      &-header{
+
+        font-size: 2.2rem;
+        font-weight: 500;
+        font-family: Arial;
+        line-height: 3rem;
+
+      }
+      &-text{
+
+        color: #272727;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        padding-bottom: 8rem;
+
+
+      }
+      &-img{
+        width: 5%;
+        height: auto;
+        padding-top: 4rem;
+        visibility: hidden;
+      }
+    }
+  }
+  &__laptop{
+    padding:0  1rem  10rem 0;
+    &-box{
+      height: 900px;
+      background-image: url("../img/laptop_background.jpg");
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        background-color: #fff;
+        padding: 10rem 15rem;
+        & h1{
+          text-align: center;
+          font-size: 4rem;
+          font-weight: 400;
+          line-height: 6rem;
+          padding-bottom: 3rem;
+          font-family: Constantia;
+
+        }
+        & p{
+          text-align: center;
+          font-size: 1.8rem;
+          line-height: 2.5rem;
+          letter-spacing: .1rem;
+          color: #3e3e3e;
+        }
+      }
+    }
+  }
+}
+.content-box{
+  padding: 0 4rem;
+}

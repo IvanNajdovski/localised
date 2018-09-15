@@ -1,0 +1,22 @@
+
+
+//VARIABLES
+
+$bp-huge: 100em; //1600px
+$bp-largest: 75em; //1200px
+$bp-large: 50em;
+
+//GLOBAL RESET
+*,
+*:after,
+*:before{
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  //background-color: inherit;
+}
+html{
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+}

@@ -1,0 +1,77 @@
+.wrapper-center{
+  margin-left:auto;
+  margin-right:auto;
+  width: 1200px;
+}
+.wrapper-center-small{
+  margin-left:auto;
+  margin-right:auto;
+  width: 1000px;
+}
+.btn{
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &-red{
+    background-image: linear-gradient(to right,#FE3140,#F2563F);
+    text-transform: uppercase;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 2rem 4rem;
+    border: none;
+    color: #fff;
+  }
+  &-join{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 2rem 5rem;
+    border: none;
+    background-color: #fff;
+    color: #313131;
+
+  }
+  &-hire{
+    background-image: linear-gradient(to right,#FE3140,#F2563F);
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 2rem 5rem;
+      border: none;
+      color: #fff;
+
+
+  }
+  &_swap{
+    border: 1px solid #282828;
+    padding: 1.5rem 3rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.4rem;
+    float: left;
+    &:focus{
+      outline:0;
+    }
+  }
+}
+.btn_swap.active{
+  background-color: #282828;
+  color: #fff;
+}
+.mg-right{
+  margin-right: 2rem;
+}
+.clock__absolute{
+  position: absolute;
+  top: 0;
+  //left: 50%;
+  //transform: rotate(300deg);
+}
+.clock__relative{
+  position: relative;
+}
+.hour{
+  //transform-origin: center center;
+}
