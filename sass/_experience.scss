@@ -1,8 +1,17 @@
 .experience{
   padding: 4rem;
+  @media only screen and(max-width: $bp-large){
+    padding: 2rem;
+  }
+  @media only screen and(max-width: $bp-medium){
+    padding: 1rem;
+  }
   &__content{
     width: 100%;
     display: flex;
+    @media only screen and(max-width: $bp-large){
+      flex-direction: column;
+    }
     &__header{
       height: 100vh;
       border: 1px solid lightgray;
@@ -14,10 +23,25 @@
 
       letter-spacing: .2rem;
       line-height: 5rem;
+      @media only screen and(max-width: $bp-large){
+        height:  60rem;
+        padding: 0 4rem;
+      }
+      @media only screen and(max-width: $bp-medium){
+        height:  30rem;
+        padding: 0 4rem;
+      }
+      @media only screen and(max-width: $bp-small){
+        line-height: 3.5rem;
+      }
+
       & h1{
         font-family: Arial;
         font-size: 3rem;
         font-weight: 400;
+        @media only screen and(max-width: $bp-smallest){
+          font-size: 2rem;
+        }
       }
     }
     &__text{
@@ -34,11 +58,25 @@
 
       transform: translate(-2rem,-2rem);
 
+      @media only screen and(max-width: $bp-large){
+        height:  40rem;
+        padding: 2rem;
+      }
+      @media only screen and(max-width: $bp-medium){
+        height: initial;
+        padding: 2rem;
+      }
+
       &-box{
         display: flex;
         margin-right: auto;
         margin-left: auto;
         width: 70%;
+
+        @media only screen and(max-width: $bp-medium){
+          width: 90%;
+          padding: 2rem;
+        }
         &-number{
           & h1{
             padding-top: .5rem;
@@ -46,6 +84,9 @@
             font-weight: 600;
             font-size: 3rem;
             padding-right: 5rem;
+            @media only screen and(max-width: $bp-smallest){
+              padding-right: 2rem;
+            }
           }
 
         }
@@ -57,6 +98,9 @@
             font-family: "Open Sans";
             font-weight: 400;
             padding-bottom: 3rem;
+            @media only screen and(max-width: $bp-smallest){
+              font-size: 2rem;
+            }
           }
           & p{
             font-size: 1.8rem;
@@ -70,17 +114,35 @@
     margin: 8rem 0;
     height: 600px;
     background-image: url("../img/stairs_background.jpg");
+    background-position: center;
     background-size: cover;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    @media only screen and (max-width: $bp-large){
+      width: 100%;
+    }
+
+    @media only screen and (max-width: $bp-small){
+      margin: 2rem 0;
+    }
+    &-box{
+      @media only screen and (max-width: $bp-small){
+        flex-direction: column;
+        display: flex;
+      }
+    }
     & h1 {
       font-size: 4rem;
       font-family: "Open Sans";
       font-weight: 700;
       margin-bottom: 2rem;
       color: #fff;
+      text-align: center;
+      @media only screen and (max-width: $bp-large){
+        font-size: 3rem;
+      }
     }
   }
 }

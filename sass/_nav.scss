@@ -39,6 +39,20 @@
       color: #fff;
       letter-spacing: .2rem;
       white-space:nowrap;
+
+      @media only screen and (max-width: $bp-large){
+        padding: 2rem 1rem;
+      }
+      @media only screen and(max-width: $bp-medium) {
+        padding: 1rem .5rem;
+        letter-spacing: 0;
+        font-size: 1rem;
+
+      }
+      @media only screen and(max-width: $bp-small) {
+        padding: 1rem .3rem;
+
+      }
     }
     &-link{
       text-decoration: none;

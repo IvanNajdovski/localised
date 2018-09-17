@@ -1,18 +1,44 @@
 .service{
   width: 100%;
-  padding: 3rem 5rem 0 5rem;
+  padding: 12rem 5rem 0 5rem;
+  @media only screen and (max-width: $bp-large){
+    padding: 2rem 5rem 0 5rem;
+  }
+  @media only screen and (max-width: $bp-medium){
+    padding: 2rem 3rem 0 3rem;
+  }
+  @media only screen and (max-width: $bp-small){
+    padding: 2rem .5rem 0 .5rem;
+  }
+
   &-box{
     display: flex;
     justify-content: center;
     padding-bottom: 8rem;
+    @media only screen and (max-width: $bp-large){
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__header{
     flex: 0 0 50%;
     padding-right: 1.5rem;
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+
     & h1 {
       font-family: Arial;
       font-weight: 500;
       font-size: 4.5rem;
+      //text-align: center;
+      @media only screen and (max-width: $bp-large){
+        text-align: center;
+        padding-bottom: 4rem;
+      }
+      @media only screen and(max-width: $bp-medium) {
+        font-size: 3rem;
+      }
       & span{
         color: #FE3140;
       }
@@ -20,12 +46,17 @@
   }
   &__text{
     padding-left: 1.5rem;
+    @media only screen and (max-width: $bp-large){
+      text-align: center;
+
+    }
     & p{
       font-size: 1.8rem;
       padding-bottom: 2rem;
       line-height: 3rem;
       letter-spacing: .1rem;
       color: #535353;
+      z-index: 30;
     }
   }
   &__content{
@@ -34,25 +65,61 @@
       padding: 2rem 1rem 0 1rem;
       display: flex;
       justify-content: center;
+      @media only screen and (max-width: $bp-large){
+        flex-wrap: wrap;
+      }
       &>*{
         border-top: 1px solid lightgray;
+        @media only screen and (max-width: $bp-large){
+          border: none;
+        }
       }
       &>*:not(:last-child){
         border-right: 1px solid lightgray;
+        @media only screen and (max-width: $bp-large){
+          border:none;
+        }
       }
     }
     &-box{
       flex: 0 0 25%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
 
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: start;
+
+      @media only screen and (max-width: $bp-medium){
+        border-bottom: 1px solid lightgray;
+      }
+
       &:hover >*{
         color: #fff !important;
       }
       &>*{
         padding-bottom: 3rem;
+      }
+      &-link{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        display: none;
+        align-self: center;
+        color: red;
+        @media only screen and (max-width: $bp-large){
+          display: block;
+          padding: 2rem 0;
+        }
+        & a{
+          color: inherit;
+          text-decoration: none;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
       }
       &-header{
 
@@ -60,14 +127,18 @@
         font-weight: 500;
         font-family: Arial;
         line-height: 3rem;
+        //white-space: nowrap;
 
       }
       &-text{
 
-        color: #272727;
+        color: #fff;
         font-size: 1.8rem;
         line-height: 2.5rem;
         padding-bottom: 8rem;
+        @media only screen and (max-width: $bp-large){
+          display: none;
+        }
 
 
       }
@@ -76,6 +147,12 @@
         height: auto;
         padding-top: 4rem;
         visibility: hidden;
+        @media only screen and (max-width: $bp-large){
+          visibility: visible;
+        }
+        @media only screen and (max-width: $bp-medium){
+          width: 1rem;
+        }
       }
     }
   }
@@ -88,6 +165,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @media only screen and (max-width: $bp-large){
+        height: 500px;
+      }
+      @media only screen and (max-width: $bp-medium){
+        height: 300px;
+      }
       &-text{
         display: flex;
         flex-direction: column;
@@ -95,6 +178,19 @@
         justify-items: center;
         background-color: #fff;
         padding: 10rem 15rem;
+        @media only screen and(max-width: $bp-large){
+
+        }
+        @media only screen and(max-width: $bp-medium){
+          padding: 2rem;
+        }
+        @media only screen and(max-width: $bp-small){
+          padding: 1rem;
+          transform: translateY(200px);
+        }
+        @media only screen and(max-width: $bp-smallest){
+          padding: .5rem;
+        }
         & h1{
           text-align: center;
           font-size: 4rem;
@@ -117,4 +213,15 @@
 }
 .content-box{
   padding: 0 4rem;
+  @media only screen and (max-width: $bp-largest){
+    padding: 1rem .5rem;
+  }
+  @media only screen and (max-width: $bp-large){
+   padding: 1rem;
+    flex: 0 0 50%;
+  }
+  @media only screen and (max-width: $bp-medium){
+    padding: 1rem;
+    flex: 0 0 100%;
+  }
 }

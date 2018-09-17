@@ -4,6 +4,11 @@
   position: relative;
   margin-bottom: 15rem;
 
+  @media only screen and(max-width: $bp-medium) {
+    height: 550px;
+    margin-bottom: 10rem;
+  }
+
   &__img {
     width: 65%;
     position: absolute;
@@ -60,6 +65,14 @@
         width: 100%;
         padding-right: 5rem;
       }
+      @media only screen and(max-width: $bp-small) {
+        line-height: 4rem;
+      }
+      @media only screen and(max-width: $bp-large) {
+        width: 100%;
+        padding: 0 2rem;
+      }
+
     }
     &-list {
       //width: 100%;
@@ -76,6 +89,14 @@
         font-size: 2rem;
         margin: 1rem 1rem;
         color: #969497;
+        @media only screen and(max-width: $bp-medium) {
+          margin: 1rem .5rem;
+
+        }
+        @media only screen and(max-width: $bp-small) {
+          margin: 1rem .3rem;
+
+        }
       }
     }
     &-btn {
@@ -102,9 +123,37 @@
   height: 700px;
   background-position: left;
   background-size: cover;
+  @media only screen and(max-width: $bp-medium) {
+    height: 550px;
+  }
 }
-.header- {
+.header-{
   width: 2rem;
   transform: translateY(47%);
-  border-top: 2px solid grey;
+  border-top: 2px solid #969497;
+  //z-index: 10;
+  transition: all 4s;
+
+  &:after{
+    content: "";
+    display: block;
+    color: #969497;
+    width: 0;
+    height: 20px;
+    border-top: 2px solid red;
+    transform: translateY(-2px);
+    z-index: 10;
+    //transition: all 4s;
+  }
+}
+.other-list-item:after{
+  content: "";
+  display: block;
+  color: #969497;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid red;
+  transform: translateY(-2px);
+  z-index: 10;
+  transition: all 4s;
 }

@@ -1,12 +1,21 @@
 .wrapper-center{
   margin-left:auto;
   margin-right:auto;
-  width: 1200px;
+  width: 80%;
+  @media only screen and (max-width: $bp-large){
+    width: 90%;
+  }
+  @media only screen and (max-width: $bp-medium){
+    width: 96%;
+  }
 }
 .wrapper-center-small{
   margin-left:auto;
   margin-right:auto;
   width: 1000px;
+  @media only screen and (max-width: $bp-large){
+    width: 700px;
+  }
 }
 .btn{
   padding: 1rem 3rem;
@@ -62,6 +71,10 @@
 }
 .mg-right{
   margin-right: 2rem;
+  @media only screen and (max-width: $bp-small){
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
 }
 .clock__absolute{
   position: absolute;
@@ -74,4 +87,184 @@
 }
 .hour{
   //transform-origin: center center;
+}
+
+//////ANIMATION CLASSES
+.button{
+  visibility: hidden;
+  opacity: 0;
+}
+.button.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: all .5s;
+  transition-delay: 1.3s;
+}
+.buttonOne{
+  visibility: hidden;
+  opacity: 0;
+}
+.buttonTwo{
+  visibility: hidden;
+  opacity: 0;
+}
+//text Bottom
+.textOne{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.textOne.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: all .5s;
+  transition-delay: .5s;
+}
+//Text Top
+.textTwo{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.textTwo.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: all .5s;
+  transition-delay: .5s;
+}
+
+//Text Top
+.textThree{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.textThree.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: all .5s;
+  transition-delay: 1s;
+}
+//Text List
+
+.textListOne{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.textListOne.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: .3s;
+}
+
+.textListTwo{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.textListTwo.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: .6s;
+}
+.textListThree{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.textListThree.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: 1s;
+}
+.textListFour{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.textListFour.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: 1.4s;
+}
+
+//TABLET ITEMS
+.tabletItemOne{
+  flex: 0;
+}
+.tabletItemOne.btn-animate{
+  flex:1;
+  transition: all 1.5s;
+  transition-delay: .2s;
+}
+
+.tabletItemTwo{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.tabletItemTwo.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: .5s;
+}
+.tabletItemThree{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.tabletItemThree.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: 1s;
+}
+.tabletItemFour{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.tabletItemFour.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  //transition: visibility, opacity .5s;
+  transition-delay: 1.4s;
+}
+
+////
+.itemOne{
+  visibility: hidden;
+  opacity: 0;
+}
+.itemOne.btn-animate{
+  isibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: .5s;
+}
+
+.itemTwo{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.itemTwo.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: 1s;
+}
+.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: all .5s;
+  transition-delay: 1s;
+
+;
 }

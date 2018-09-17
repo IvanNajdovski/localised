@@ -1,4 +1,46 @@
- $("document").ready( function () {
+
+
+//SCROLING FUNCTION
+function isScrolledIntoView(a) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = a.offset().top;
+    var elemBottom = elemTop + a.outerHeight();
+
+    if (elemBottom > docViewTop && elemTop < docViewBottom) {
+        a.addClass("btn-animate");
+    } else {
+        a.removeClass("btn-animate");
+    }
+};
+
+//TIME FUNCTION CLOCK SECTION
+var timeClock = function setTime(){
+    let time = new Date($.now());
+
+    let hours = time.getHours();
+    let hoursLondon = hours - 1
+    let hoursNewYork = hours - 6
+    let hoursHongKong = hours - 6
+    let hoursBucharest = hours + 1
+    let hoursSidnay = hours - 4
+    //console.log(hours);
+    let minutes = time.getMinutes();
+    //console.log(minutes);
+    let hourDeg = (hours * 30)
+    let minuteDeg =(minutes * 6)
+    //console.log(hourDeg)
+    $(".hour").css("transform",`rotate(${hours*30}deg)`);
+    $(".londonHour").css("transform",`rotate(${hoursLondon*30}deg)`);
+    $(".newyorkHour").css("transform",`rotate(${hoursNewYork*30}deg)`);
+    $(".hongkongHour").css("transform",`rotate(${hoursHongKong*30}deg)`);
+    $(".bucharestHour").css("transform",`rotate(${hoursBucharest*30}deg)`);
+    $(".sidneyHour").css("transform",`rotate(${hoursSidnay*30}deg)`);
+
+    $(".minute").css("transform",`rotate(${minuteDeg}deg)`);
+};
+
+$("document").ready( function () {
 
      $(window).scroll( function(){
      if($(window).scrollTop()>0){
@@ -64,6 +106,7 @@
      });
 //CHANGE THE PIC
          $(".btn_swap").on("click",function(e){
+             $(".sudo-end").addClass("sudo-start");
              if(!$(this).hasClass("active")) {
                  $(".btn_swap").toggleClass("active");
              }
@@ -81,25 +124,33 @@
 
 ///CLOCK FUNCTIONALITY
 
-        function setTime(){
-             var time = new Date($.now());
-             console.log(time);
-             var hours = time.getHours();
-             var hoursLondon = hours - 1
-            var hoursNewYork = hours - 1
-            var hoursHongKong = hours - 1
-            var hoursBucharest = hours - 1
-            var hoursSidnay = hours - 1
-             console.log(hours);
-             var minutes = time.getMinutes();
-             console.log(minutes);
-             var hourDeg = (hours * 30)
-             var minuteDeg =(minutes * 6)
-            console.log(hourDeg)
-             $(".hour").css("transform",`rotate(${hourDeg}deg)`);
-             $(".minute").css("transform",`rotate(${minuteDeg}deg)`);
-        }
-        setTime()
+    timeClock();
+     //setTime()
+        setInterval(timeClock,20000);
+
+////SCROLING FUNCTION
+
+
+    $(window).on("resize scroll", function () {
+        isScrolledIntoView($(".button"));
+        isScrolledIntoView($(".buttonOne"));
+        isScrolledIntoView($(".buttonTwo"));
+        isScrolledIntoView($(".textOne"));
+        isScrolledIntoView($(".textTwo"));
+        isScrolledIntoView($(".textThree"));
+        isScrolledIntoView($(".textListOne"));
+        isScrolledIntoView($(".textListTwo"));
+        isScrolledIntoView($(".textListThree"));
+        isScrolledIntoView($(".textListFour"));
+        isScrolledIntoView($(".tabletItemOne"));
+        isScrolledIntoView($(".tabletItemTwo"));
+        isScrolledIntoView($(".tabletItemThree"));
+        isScrolledIntoView($(".tabletItemFour"));
+        isScrolledIntoView($(".itemOne"));
+        isScrolledIntoView($(".itemTwo"));
+
+
+       })
 
 
  });

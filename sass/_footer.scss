@@ -1,0 +1,48 @@
+.footer{
+  &__box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgray;
+
+    padding: 4rem 0;
+    @media only screen and(max-width: $bp-small){
+      flex-direction: column-reverse;
+      padding: 2rem 0;
+    }
+    &-text{
+      & p{
+        font-size: 1.6rem;
+        color: #404040;
+      }
+    }
+    &-list{
+      & ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+        @media only screen and(max-width: $bp-small){
+          padding-bottom: 2rem;
+        }
+
+
+        & li{
+          color: red;
+          font-size: 2rem;
+          padding-right: 2rem;
+          & a{
+            color: red;
+            text-decoration: none;
+            &:hover{
+              text-decoration: underline;
+
+            }
+          }
+        }
+        & >:last-child{
+          font-size: 3rem ;
+        }
+      }
+    }
+  }
+}
