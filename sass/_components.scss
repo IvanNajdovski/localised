@@ -260,6 +260,51 @@
   transition: visibility, opacity .5s;
   transition-delay: 1s;
 }
+//CAREERS
+.careersOne{
+  visibility: hidden;
+  opacity: 0;
+}
+.careersOne.btn-animate{
+  isibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: .5s;
+}
+
+.careersTwo{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.careersTwo.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: .7s;
+}
+.careersThree{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.careersThree.btn-animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: 1.2s;
+}
+.careersHeader{
+  visibility: hidden;
+  opacity: 0;
+
+}
+.careersHeader.animate{
+  visibility: visible;
+  opacity: 100;
+  transition: visibility, opacity .5s;
+  transition-delay: .5s;
+}
 .btn-animate{
   visibility: visible;
   opacity: 100;

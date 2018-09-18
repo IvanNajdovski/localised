@@ -148,9 +148,14 @@ $("document").ready( function () {
         isScrolledIntoView($(".tabletItemFour"));
         isScrolledIntoView($(".itemOne"));
         isScrolledIntoView($(".itemTwo"));
+        // isScrolledIntoView($(".careersOne"));
+        // isScrolledIntoView($(".careersTwo"));
+        // isScrolledIntoView($(".careersThree"));
 
 
-       })
+       });
+
+
 
 
  });

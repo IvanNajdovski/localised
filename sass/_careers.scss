@@ -1,0 +1,82 @@
+
+.banner{
+  width: 100%;
+  //content:"";
+  //height: 100vh;
+  display: block;
+  &__content{
+    width: 100%;
+    height: 50vh;
+
+    background-image: url("../img/careers_banner.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & h1{
+      color: #fff;
+      font-size: 3rem;
+      font-family: "Open Sans";
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+  &__careers{
+    padding: 2rem 4rem;
+    &__content{
+      &-header{
+        font-size: 1.6rem;
+        font-family: "Open Sans";
+        font-weight: 600;
+        color: #3e3e3e;
+        display: block;
+        padding: 2rem 0;
+        border-bottom: 1px solid lightgray;
+
+      }
+      &-box{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid lightgray;
+        & p{
+          padding: .5rem 0;
+          font-size: 1.6rem;
+          color: #3e3e3e;
+          display: block;
+        }
+        & ul{
+          list-style: none;
+          padding-left: 1.6rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          & li{
+
+            display: block;
+            font-size: 2rem;
+            color: red;
+            font-family: "Open Sans";
+            padding-bottom: 1rem;
+            & a{
+              text-align: left;
+              color: inherit;
+              text-decoration: none;
+              &:hover{
+              text-decoration: underline;
+            }
+            }
+            & span{
+              padding-top: 2rem;
+              float: right;
+              font-size: 1rem;
+              font-family: "Cinzel";
+              color: #404040;
+            }
+          }
+        }
+      }
+    }
+  }
+}
