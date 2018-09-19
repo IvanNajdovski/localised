@@ -288,7 +288,7 @@ html {
   align-items: center;
   justify-content: space-between; }
   .nav.active.shadow {
-    box-shadow: 0 5px 20px #9a9a9a; }
+    box-shadow: 0 1px 8px #d7d7d7; }
   .nav__img {
     flex: 0 0 13%; }
     .nav__img img {
