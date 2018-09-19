@@ -47,6 +47,7 @@ var timeClock = function setTime(){
 
 $("document").ready( function () {
 //Nav ANIMATION
+    console.log($(window).height())
     $(window).scroll( function(){
         if($(window).scrollTop()>0){
             $(".nav").css("background-color","#fff");
@@ -69,23 +70,15 @@ $("document").ready( function () {
 
         }
     });
-    const navigation = $(".nav").outerHeight();
-    const sectionOffset = $(".section").offset().top;
-    const section = $(".section").offset().top + $(".section").outerHeight()
+    $(".location-box-item").on("mouseover", function(){
+        $(this).addClass("active");
+        $(this).children("img").attr("src","img/pin-white.png");
+    })
+    $(".location-box-item").on("mouseleave", function(){
+        $(this).removeClass("active");
+        $(this).children("img").attr("src","img/pin-black.png");
+    })
 
-    $(window).scroll( function(){
-
-        if($(window).scrollTop()>sectionOffset){
-
-            $(".section").addClass("active");
-            $(".section__content-box").addClass("active");
-
-        }else if( $(window).scrollTop()<section ){
-
-            $(".section").removeClass("active");
-            $(".section__content-box").removeClass("active");
-        }
-    });
 
 
 ///CLOCK FUNCTIONALITY
@@ -98,57 +91,15 @@ $("document").ready( function () {
 
     $(".careersHeader").addClass("animate")
     $(window).on("resize scroll", function () {
-        isScrolledIntoView($(".howitworksOne"));
-        isScrolledIntoView($(".howitworksTwo"));
-        isScrolledIntoView($(".howitworksThree"));
-        isScrolledIntoView($(".howitworksFour"));
 
-        isScrolledIntoView($(".about-header"));
-        isScrolledIntoView($(".about__text"));
+
+        isScrolledIntoView($(".contact-header"));
+        isScrolledIntoView($(".contact__top-box"));
 
     });
-    $(".text-collapse").click(function(){
 
-        if($(this).hasClass("active")){
-            $(this).removeClass("active")
-            $(this).parent("div").removeClass("active");
-            $(this).parent("div").css("height", "80px");
-            $(this).children("img").attr("src",`img/plus.png`);
 
-        }else{
-            let collapse = $(this).parents(".value__content-list").children(".value__content-list-box");
-            console.log(collapse)
-            for(var i = 0; i < collapse.length; i++){
-                if($(collapse[i]).hasClass("active")){
-                    $(collapse[i]).removeClass("active");
-                    $(collapse[i]).css("height", "80px");
-                    $(collapse[i]).children("h3").children("img").attr("src","img/plus.png");
-                }
-            }
-            $(this).addClass("active")
-            $(this).parent("div").addClass("active");
-            $(this).children("img").attr("src",`img/minus.png`);
 
-            var height = $(this).parent("div").children("p").outerHeight() + $(this).outerHeight()
-            console.log(height)
-
-            $(this).parent("div").css("height", `${height}px`);
-
-        };
-    });
-
-    $(".about__link").on("click", function(e){
-        if(this.hash !==""){
-            e.preventDefault()
-            var hash = this.hash
-            console.log($(hash).offset().top)
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            },1000,function(){
-                window.location.hash = hash;
-            });
-        }
-    });
 
 
 });

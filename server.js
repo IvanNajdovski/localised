@@ -21,6 +21,9 @@ app.get("/about", (req,res,next)=>{
 app.get("/how-it-works", (req,res,next)=>{
     res.sendFile(publicPath + "howitworks.html");
 });
+app.get("/contact", (req,res,next)=>{
+    res.sendFile(publicPath + "contact.html");
+});
 app.listen(port, () =>{
     console.log(`Portal open on port ${port}`);
 });

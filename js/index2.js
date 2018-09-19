@@ -46,8 +46,15 @@ $("document").ready( function () {
      if($(window).scrollTop()>0){
          $(".nav").css("background-color","#fff");
          $(".nav").css("position","fixed");
+         $(".nav").addClass("active");
          $(".img__logo").attr("src","img/logo_black.svg");
          $(".list__item").css("color","black");
+         if($(window).scrollTop()>$(window).height()){
+             $(".nav").addClass("shadow");
+         }else{
+
+             $(".nav").removeClass("shadow");
+         }
      }else{
          $(".nav").css("background-color","transparent");
          $(".nav").css("position","absolute");

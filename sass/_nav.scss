@@ -8,6 +8,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  &.active{
+
+    &.shadow {
+      box-shadow: 0 5px 20px #9a9a9a;
+    }
+    }
+
   &__img{
     flex: 0 0 13%;
     & img{
@@ -42,8 +49,8 @@
       font-size: 1.2rem;
       font-weight: 500;
       font-family: "Open Sans";
-      padding: 2rem 0rem;
-      margin: 0rem 3rem;
+      padding: 2rem 0;
+      margin: 0 3rem;
       color: #fff;
       letter-spacing: .2rem;
       white-space:nowrap;
