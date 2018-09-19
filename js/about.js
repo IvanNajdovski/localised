@@ -92,14 +92,32 @@ $("document").ready( function () {
 
 
     });
-    $(".text-collapse").on("click", function(){
-        $(this).toggleClass("active")
-        $(this).parent("div").toggleClass("active");
+    $(".text-collapse").click(function(){
+
         if($(this).hasClass("active")){
-            $(this).children("img").attr("src",`img/minus.png`);
+            $(this).removeClass("active")
+            $(this).parent("div").removeClass("active");
+            $(this).parent("div").css("height", "80px");
+            $(this).children("img").attr("src",`img/plus.png`);
 
         }else{
-            $(this).children("img").attr("src",`img/plus.png`);
+            let collapse = $(this).parents(".value__content-list").children(".value__content-list-box");
+            console.log(collapse)
+            for(var i = 0; i < collapse.length; i++){
+                if($(collapse[i]).hasClass("active")){
+                    $(collapse[i]).removeClass("active");
+                    $(collapse[i]).css("height", "80px");
+                    $(collapse[i]).children("h3").children("img").attr("src","img/plus.png");
+                }
+            }
+            $(this).addClass("active")
+            $(this).parent("div").addClass("active");
+            $(this).children("img").attr("src",`img/minus.png`);
+
+            var height = $(this).parent("div").children("p").outerHeight() + $(this).outerHeight()
+            console.log(height)
+
+            $(this).parent("div").css("height", `${height}px`);
 
         };
     });
