@@ -314,7 +314,7 @@
     }
     @media only screen and(max-width: $bp-small){
       width: 100%;
-      
+
 
 
     }
@@ -330,6 +330,10 @@
       font-weight: 400;
       font-family: "Open Sans";
       padding-bottom: 2rem;
+      @media only screen and(max-width: $bp-small){
+       font-size: 3rem;
+
+      }
     }
     & h3{
       color: red;
@@ -343,6 +347,10 @@
       font-size: 1.6rem;
       line-height: 3rem;
       color: #626262;
+      @media only screen and(max-width: $bp-small){
+        line-height: 2.5rem;
+
+      }
     }
     &-in{
       font-size: 4rem;
@@ -355,6 +363,10 @@
       right: 0;
       padding: 3rem;
       background-color: transparent;
+      @media only screen and(max-width: $bp-small){
+        padding: 2rem;
+
+      }
       & i{
         font-size: 2rem;
         color: #696969;
