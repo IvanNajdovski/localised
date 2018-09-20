@@ -46,13 +46,21 @@ var timeClock = function setTime(){
 };
 
 $("document").ready( function () {
+
+
+    $(window).on('resize', function(){
+        if($(this).width() > 800){
+            $(".checkbox__input").prop("checked", false)
+        }
+    });
 //Nav ANIMATION
-    console.log($(window).height())
+
     $(window).scroll( function(){
         if($(window).scrollTop()>0){
             $(".nav").css("background-color","#fff");
             $(".nav").css("position","fixed");
             $(".nav").addClass("active");
+            $(".checkbox__label").addClass("active")
             $(".img__logo").attr("src","img/logo_black.svg");
             $(".list__item").css("color","black");
             if($(window).scrollTop()>$(window).height()){
@@ -67,6 +75,7 @@ $("document").ready( function () {
             $(".img__logo").attr("src","img/logo_white.svg");
             $(".list__item").css("color","#fff");
             $(".nav").removeClass("active");
+            $(".checkbox__label").removeClass("active")
 
         }
     });

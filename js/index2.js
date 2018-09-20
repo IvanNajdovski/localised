@@ -42,10 +42,17 @@ var timeClock = function setTime(){
 
 $("document").ready( function () {
 
+    $(window).on('resize', function(){
+        if($(this).width() > 800){
+            $(".checkbox__input").prop("checked", false)
+        }
+    });
+
      $(window).scroll( function(){
      if($(window).scrollTop()>0){
          $(".nav").css("background-color","#fff");
          $(".nav").css("position","fixed");
+         $(".checkbox__label").addClass("active");
          $(".nav").addClass("active");
          $(".img__logo").attr("src","img/logo_black.svg");
          $(".list__item").css("color","black");
@@ -60,6 +67,7 @@ $("document").ready( function () {
          $(".nav").css("position","absolute");
          $(".img__logo").attr("src","img/logo_white.svg");
          $(".list__item").css("color","#fff");
+         $(".checkbox__label").removeClass("active")
 
      }
     });

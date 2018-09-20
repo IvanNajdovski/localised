@@ -1,10 +1,16 @@
 .value{
   padding-bottom: 100px;
+  @media only screen and(max-width: $bp-large){
+    padding-bottom: 100px;
+  }
   &__content{
     display: flex;
     align-items: center;
     justify-items: center;
     padding-top: 4rem;
+    @media only screen and(max-width: $bp-large){
+      flex-direction: column;
+    }
 
     &.active{
       align-items: start;
@@ -17,11 +23,14 @@
       justify-content: center;
       flex-direction: column;
       & img {
+        @media only screen and (max-width: $bp-small){
+          width: 100%;
+        }
         transform: translateY(100px);
 
       &.btn-animate {
         transform: translateY(0);
-        transition: all .7s;
+        transition: all .8s;
 
       }
     }
@@ -39,6 +48,8 @@
     &-list{
       flex: 0 0 50%;
       padding: 4rem;
+
+
       &.active{
         padding-top: 4rem;
       }
@@ -48,6 +59,9 @@
         transition:all .4s;
         transition-delay: .3s;
         height: 80px;
+        &.collapsed{
+          height: 80px;
+        }
         &.active{
          // height: 250px;
           transition: all .4s;
@@ -92,6 +106,10 @@
   &__content{
     display: flex;
     align-items: center;
+    @media only screen and(max-width: $bp-medium){
+      flex-direction: column;
+      padding: 0 4rem;
+    }
     &-box{
       flex: 0 0 33%;
       display: flex;
@@ -242,6 +260,104 @@
       @media only screen and(max-width: $bp-small) {
         width: 90%;
         font-size: 2rem;
+      }
+    }
+  }
+}
+.pop__up{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  z-index: 3000;
+  padding: 2rem;
+  display: none;
+  @media only screen and(max-width: $bp-medium){
+    flex-direction: column;
+  }
+  &-text-img{
+    display: none;
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+  }
+  &__img{
+    flex: 0 0 70%;
+    & img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @media only screen and(max-width: $bp-medium){
+      flex-direction: column;
+    }
+  }
+  &__text{
+    bottom: 0;
+    right: 0;
+    //height: 500px;
+    width: 50%;
+    background-color: #fff;
+    position: absolute;
+    flex: 0 0 50%;
+    transform: translateY(-100px);
+    @media only screen and(max-width: $bp-medium){
+      width: 100%;
+      bottom: 100px;
+      transform: translateY(0);
+      padding: 10rem 6rem;
+
+    }
+    @media only screen and(max-width: $bp-small){
+      width: 100%;
+      bottom: 180px;
+
+
+    }
+
+
+    padding: 10rem;
+    @media only screen and(max-width: $bp-large){
+      padding: 6rem;
+
+    }
+    & h1{
+      font-size: 4rem;
+      font-weight: 400;
+      font-family: "Open Sans";
+      padding-bottom: 2rem;
+    }
+    & h3{
+      color: red;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-family: "Open Sans";
+      padding-bottom: 2rem;
+    }
+    & p {
+      font-size: 1.6rem;
+      line-height: 3rem;
+      color: #626262;
+    }
+    &-in{
+      font-size: 4rem;
+      padding: 2rem 0;
+    }
+    & button{
+      position: absolute;
+      border: none;
+      top: 0;
+      right: 0;
+      padding: 3rem;
+      background-color: transparent;
+      & i{
+        font-size: 2rem;
+        color: #696969;
+
       }
     }
   }

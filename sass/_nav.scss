@@ -1,48 +1,83 @@
-.nav{
+.nav {
   z-index: 2;
   background-color: transparent;
-  padding: 2rem 4rem 2rem 5rem;
+  padding: 0;
   position: absolute;
   width: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  &.active{
+  justify-content: center;
+  &.active {
 
     &.shadow {
       box-shadow: 0 1px 8px #d7d7d7;
     }
-    }
+  }
 
-  &__img{
-    flex: 0 0 13%;
-    & img{
+  &__img {
+    flex: 0 0 20rem;
+    //width: 15rem;
+    padding: 4rem 4rem;
+    float: left;
+    @media only screen and(max-width: $bp-large) {
+      padding: 4rem;
+    }
+    @media only screen and(max-width: $bp-medium) {
+      padding: 4rem 2rem;
+    }
+    & img {
       width: 100%;
       height: auto;
 
     }
   }
-  &__text-box{
-    flex: 0 0 30%;
+  &__text-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    &.active {
+
+      @media only screen and(max-width: $bp-medium) {
+        width: 100%;
+        padding: 0;
+        flex: 0 0 100%;
+      }
+    }
   }
-  &__text-list{
+  &__text-list {
     display: flex;
     justify-content: center;
     align-items: center;
-    &>:last-child{
+
+
+    @media only screen and(max-width: $bp-medium) {
+      display: none;
+      padding: 3rem ;
+      background-color: black;
+    }
+    & > :last-child {
+      list-style: none;
       font-size: 1.2rem;
       font-weight: 500;
       text-transform: uppercase;
       font-family: "Open Sans";
-      background-image: linear-gradient(to right,#FE3140,#F2563F);
+      background-image: linear-gradient(to right, #FE3140, #F2563F);
       color: #fff;
       padding: 2rem 3rem;
       letter-spacing: .2rem;
-      white-space:nowrap;
+      white-space: nowrap;
+      @media only screen and(max-width: $bp-large) {
+        padding: 2rem 2rem;
+      }
+      @media only screen and(max-width: $bp-medium) {
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
 
     }
-    &-item:not(:last-child){
+    &-item:not(:last-child) {
       display: flex;
       list-style: none;
       text-transform: uppercase;
@@ -53,13 +88,27 @@
       margin: 0 3rem;
       color: #fff;
       letter-spacing: .2rem;
-      white-space:nowrap;
-      &.active{
+      white-space: nowrap;
+      @media only screen and(max-width: $bp-large) {
+        padding: 2rem 0;
+        margin: 0 2rem;
+      }
+      @media only screen and(max-width: $bp-medium) {
+        padding: 2rem 3rem;
+        margin: 0 ;
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+      &.active {
         border-top: 2px solid red;
         color: red !important;
+        @media only screen and(max-width: $bp-medium) {
+          border-top: none;
+          color: #fff !important;
+        }
       }
 
-      @media only screen and (max-width: $bp-large){
+      @media only screen and (max-width: $bp-large) {
         padding: 2rem 1rem;
       }
       @media only screen and(max-width: $bp-medium) {
@@ -73,7 +122,7 @@
 
       }
     }
-    &-link{
+    &-link {
       text-decoration: none;
       color: inherit;
       height: 100%;
@@ -81,3 +130,80 @@
     }
   }
 }
+
+.checkbox {
+  &__label {
+    content: "";
+    display: none;
+    width: 4rem;
+    height: 3px;
+    transition: all .5s;
+    cursor: pointer;
+    background-color: lightgray;
+    &.active{
+      background-color: #3b3b3b;
+    }
+    @media only screen and(max-width: $bp-medium) {
+      position: absolute;
+      top: 6rem;
+      right: 4rem;
+      margin-left: auto;
+      display: block;
+    }
+    &:before {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 3px;
+      background-color: inherit;
+      transform: translateY(-300%) rotate(0);
+      transition: all .5s;
+    }
+    &:after {
+
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 3px;
+      background-color: inherit;
+      transform: translateY(200%) rotate(0);
+      transition: all .5s;
+
+    }
+
+  }
+  &__input {
+    display: none;
+    &:checked + label {
+      right: 8rem;
+      width: 0;
+      transition: all .5s;
+      &:after {
+        transform: translateY(-100%) rotate(45deg);
+
+        opacity: 100;
+      }
+      &:before {
+
+        transform: translateY(0) rotate(-45deg);
+        transition: all .5s;
+
+      }
+    }
+    &:checked ~ ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      float: right;
+      &>*{
+        color: #fff !important;
+      }
+
+    }
+    &:checked ~ .nav__img {
+      display: none;
+    }
+  }
+
+}
+

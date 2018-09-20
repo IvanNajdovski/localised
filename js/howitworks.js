@@ -46,12 +46,20 @@ var timeClock = function setTime(){
 };
 
 $("document").ready( function () {
+
+    $(window).on('resize', function(){
+        if($(this).width() > 800){
+            $(".checkbox__input").prop("checked", false)
+            $(".section__input").prop("checked", false)
+        }
+    });
 //Nav ANIMATION
     $(window).scroll( function(){
         if($(window).scrollTop()>0){
             $(".nav").css("background-color","#fff");
             $(".nav").css("position","fixed");
             $(".nav").addClass("active");
+            $(".checkbox__label").addClass("active")
             $(".img__logo").attr("src","img/logo_black.svg");
             $(".list__item").css("color","black");
             if($(window).scrollTop()>$(window).height()){
@@ -66,6 +74,7 @@ $("document").ready( function () {
             $(".img__logo").attr("src","img/logo_white.svg");
             $(".list__item").css("color","#fff");
             $(".nav").removeClass("active");
+            $(".checkbox__label").removeClass("active")
 
         }
     });
@@ -131,11 +140,25 @@ $("document").ready( function () {
 
             var height = $(this).parent("div").children("p").outerHeight() + $(this).outerHeight()
             console.log(height)
-
             $(this).parent("div").css("height", `${height}px`);
 
         };
     });
+    $(".solution__icon").on("click", function(){
+        if($(this).parent(".solution__content__box-item").hasClass("active")){
+            $(this).parent(".solution__content__box-item").css("height", `300px`);
+            $(this).parent(".solution__content__box-item").removeClass("active");
+        }else {
+            var allHight = 0;
+            var height = $(this).parent(".solution__content__box-item").children()
+            for (var i = 0; i < height.length; i++) {
+                allHight = allHight + $(height[i]).outerHeight()
+            }
+
+            $(this).parent(".solution__content__box-item").css("height", `${allHight}px`);
+            $(this).parent(".solution__content__box-item").addClass("active");
+        }
+        });
 
     $(".about__link").on("click", function(e){
         if(this.hash !==""){
@@ -149,6 +172,10 @@ $("document").ready( function () {
             });
         }
     });
+    $(".checkbox__input").on("click", function(){
+        return ($(".checkbox__input").prop("checked"))?$(".section").css("z-index","0"):$(".section").css("z-index","100")
+
+    })
 
 
 });

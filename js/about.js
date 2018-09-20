@@ -47,11 +47,18 @@ var timeClock = function setTime(){
 
 $("document").ready( function () {
 
+    $(window).on('resize', function(){
+        if($(this).width() > 800){
+            $(".checkbox__input").prop("checked", false)
+        }
+    });
+
     $(window).scroll( function(){
         if($(window).scrollTop()>0){
             $(".nav").css("background-color","#fff");
             $(".nav").css("position","fixed");
             $(".nav").addClass("active");
+            $(".checkbox__label").addClass("active")
             $(".img__logo").attr("src","img/logo_black.svg");
             $(".list__item").css("color","black");
             if($(window).scrollTop()>$(window).height()){
@@ -65,6 +72,7 @@ $("document").ready( function () {
             $(".nav").css("position","absolute");
             $(".img__logo").attr("src","img/logo_white.svg");
             $(".list__item").css("color","#fff");
+            $(".checkbox__label").removeClass("active")
 
         }
     });
@@ -116,11 +124,11 @@ $("document").ready( function () {
 
             var height = $(this).parent("div").children("p").outerHeight() + $(this).outerHeight()
             console.log(height)
-
             $(this).parent("div").css("height", `${height}px`);
 
         };
     });
+
 
     $(".about__link").on("click", function(e){
         if(this.hash !==""){
@@ -134,6 +142,48 @@ $("document").ready( function () {
             });
         }
     });
+
+
+    $(window).on('resize', function(){
+        if($(this).width() > 800){
+            //$(".checkbox__input").prop("checked", false)
+            $(".pop__up-image").css("display", "block");
+            $(".pop__up-text-img").css("display", "none");
+        }else{
+            $(".pop__up-text-img").css("display", "block");
+            $(".pop__up-image").css("display", "none");
+        }
+    });
+    $(".employees__name").on("click", function(){
+        $(".pop__up").css("display","flex");
+        if($(this).text().toLowerCase() === "kris green"){
+            $(".pop__up-text-img").attr("src", "img/person_1.jpg");
+            $(".pop__up-image").attr("src", "img/person_1.jpg");
+            $(".pop__up-header").text("Kris Green")
+            $(".pop__up-position").text("Chief Executive Officer");
+            $(".pop__up-text").text("Kris was previously Chief Strategy Officer of cross-border ecommerce platform FiftyOne, rebranded as Borderfree in 2013 and acquired by Pitney Bowes in May 2015. He is expert in the globalisation and localisation of ecommerce businesses and in building technology solutions that stimulate and encourage online shopping on a global basis.")
+
+        }else if($(this).text().toLowerCase() === "michelle lim") {
+            $(".pop__up-text-img").attr("src", "img/person_2.jpg");
+            $(".pop__up-image").attr("src", "img/person_2.jpg");
+            $(".pop__up-header").text("Michelle Lim")
+            $(".pop__up-position").text("Chief Marketing Officer");
+            $(".pop__up-text").text("Michelle was previously the VP Global Marketing &amp; International for Shopbop, a leading online fashion retailer and Amazon subsidiary. Michelle now leads the Localised global marketing practice. Prior to Shopbop/Amazon, Michelle worked at eBay, relaunching its US fashion site and eBay's North American CRM offerings.")
+
+        }else{
+            $(".pop__up-text-img").attr("src", "img/CIO.jpg");
+            $(".pop__up-image").attr("src", "img/CIO.jpg");
+            $(".pop__up-header").text("Peter Jones CBE")
+            $(".pop__up-position").text("Executive Chairman");
+            $(".pop__up-text").text("Peter is one of the UK's most successful and well known entrepreneurs. His broad range of investments and innovations span industries from publishing to clothing, and toys to consumer packaged goods. Peter is also an active philanthropist and campaigner for youth enterprise throughout the world.")
+
+        }
+
+        //console.log(one)
+    })
+    $(".pop__up-close").on("click", function(){
+        $(".pop__up").css("display","none");
+    })
 
 
 });

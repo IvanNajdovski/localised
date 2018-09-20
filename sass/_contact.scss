@@ -12,6 +12,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media only screen and(max-width: $bp-medium){
+      padding-top: 10rem;
+    }
 
   }
 }
@@ -21,6 +24,12 @@
   width: 100%;
   visibility: hidden;
   opacity: 0;
+  @media only screen and(max-width: $bp-medium){
+    flex-direction: column;
+    &>*{
+      border-bottom: 1px solid lightgray;
+    }
+  }
   &.btn-animate{
     visibility: visible;
     opacity: 100;
@@ -37,6 +46,9 @@
   padding-bottom: 2rem;
   visibility: hidden;
   opacity: 0;
+  @media only screen and(max-width: $bp-medium){
+    font-size: 2.5rem;
+  }
   &.btn-animate{
     visibility: visible;
     opacity: 100;
@@ -62,6 +74,9 @@
   &-box{
     display: flex;
     flex-wrap: wrap;
+    @media only screen and( max-width: $bp-medium){
+      flex-direction: column;
+    }
     &-box{
       padding: 2rem;
       flex: 0 0 33%;
@@ -196,6 +211,9 @@
         font-size: 4rem;
         font-weight: 700;
         padding-bottom: 4rem;
+        @media only screen and(max-width: $bp-small){
+          font-size: 3rem;
+        }
       }
     }
   }
