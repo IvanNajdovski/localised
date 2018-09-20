@@ -1461,7 +1461,6 @@ html {
     background-color: #fff;
     position: absolute;
     flex: 0 0 50%;
-    transform: translateY(-100px);
     padding: 10rem; }
     @media only screen and (max-width: 50em) {
       .pop__up__text {
