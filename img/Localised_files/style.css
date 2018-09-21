@@ -1479,9 +1479,6 @@ html {
       font-weight: 400;
       font-family: "Open Sans";
       padding-bottom: 2rem; }
-      @media only screen and (max-width: 37.5em) {
-        .pop__up__text h1 {
-          font-size: 3rem; } }
     .pop__up__text h3 {
       color: red;
       font-size: 1.6rem;
@@ -1493,9 +1490,6 @@ html {
       font-size: 1.6rem;
       line-height: 3rem;
       color: #626262; }
-      @media only screen and (max-width: 37.5em) {
-        .pop__up__text p {
-          line-height: 2.5rem; } }
     .pop__up__text-in {
       font-size: 4rem;
       padding: 2rem 0; }
@@ -1506,9 +1500,6 @@ html {
       right: 0;
       padding: 3rem;
       background-color: transparent; }
-      @media only screen and (max-width: 37.5em) {
-        .pop__up__text button {
-          padding: 2rem; } }
       .pop__up__text button i {
         font-size: 2rem;
         color: #696969; }
@@ -1522,8 +1513,6 @@ html {
 .section {
   overflow: hidden;
   padding-bottom: 2rem; }
-  .section.howitworks {
-    overflow: unset; }
   .section__label {
     display: none;
     text-align: center; }

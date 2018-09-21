@@ -12,6 +12,9 @@
 .section {
   overflow: hidden;
   padding-bottom: 2rem;
+  &.howitworks{
+    overflow: unset;
+  }
   &__label{
     display: none;
     text-align: center;
