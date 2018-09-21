@@ -161,6 +161,7 @@ $("document").ready( function () {
         isScrolledIntoView($(".tabletItemTwo"));
         isScrolledIntoView($(".tabletItemThree"));
         isScrolledIntoView($(".tabletItemFour"));
+        isScrolledIntoView($(".textListFour"));
         isScrolledIntoView($(".itemOne"));
         isScrolledIntoView($(".itemTwo"));
         // isScrolledIntoView($(".careersOne"));
