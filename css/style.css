@@ -838,7 +838,7 @@ html {
             width: 20px; } }
       .tablet__content-tablet-inner {
         flex: 0 0 90%;
-        height: 100%;
+        height: 400px;
         overflow: hidden;
         border-radius: 30px; }
         .tablet__content-tablet-inner img {
