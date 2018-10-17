@@ -398,7 +398,7 @@ html {
   @media only screen and (max-width: 50em) {
     .checkbox__label {
       position: absolute;
-      top: 3.5rem;
+      top: 4rem;
       right: 4rem;
       margin-left: auto;
       display: block; } }
