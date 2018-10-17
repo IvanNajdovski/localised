@@ -24,7 +24,7 @@
       padding: 4rem;
     }
     @media only screen and(max-width: $bp-medium) {
-      padding: 4rem 2rem;
+      padding: 2rem 2rem;
     }
     & img {
       width: 100%;
@@ -145,7 +145,7 @@
     }
     @media only screen and(max-width: $bp-medium) {
       position: absolute;
-      top: 6rem;
+      top: 3.5rem;
       right: 4rem;
       margin-left: auto;
       display: block;

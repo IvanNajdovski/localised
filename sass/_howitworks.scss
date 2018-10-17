@@ -132,11 +132,14 @@
       box-shadow: 0 5px 10px #ababab;
       background-color: #F6F7F9;
       display: flex;
+
       margin-bottom: 4rem;
       @media only screen and (max-width: $bp-large){
         flex-direction: column;
         justify-content: flex-start;
+        //height: 900px;
       }
+
       &>*:not(:first-child){
         &:hover{
           background-color: #fff;
@@ -181,11 +184,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        @media only screen and (max-width: $bp-large){
+        @media only screen and(max-width: $bp-large){
           width: 100%;
           justify-content: start;
           align-items: start;
-          height: 300px;
+          height: 300px ;
           overflow: hidden;
         }
 
